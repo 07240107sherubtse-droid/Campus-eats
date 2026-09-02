@@ -1,3 +1,4 @@
+```text
 # Campus-eats
 campus-eats/
 ├── config/                    (data layer support — DB connection, next lab)
@@ -26,3 +27,4 @@ campus-eats/
 ├── .gitignore
 ├── nodemon.json
 └── package.json
+```
