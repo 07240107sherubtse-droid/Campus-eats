@@ -6,6 +6,10 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const { connectMongo } = require('./config/mongo');
+connectMongo().catch(err => console.error('MongoDB connection failed:', err));
+
+
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -40,6 +44,5 @@ app.get('/db-test', async (req, res) => {
   res.json(result);
 });
 
-app.listen(PORT, () => {
-  console.log(`Campus Eats running at http://localhost:${PORT}`);
-});
+
+module.exports = app;
